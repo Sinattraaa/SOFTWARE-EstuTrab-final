@@ -2,7 +2,10 @@ import React from 'react';
 import './App.css';
 
 function App() {
-  // Función para manejar el clic en los botones
+  // Rutas absolutas desde la carpeta public
+  const logoUnsmm = process.env.PUBLIC_URL + "/logo_unsmm.png";
+  const logoFii = process.env.PUBLIC_URL + "/logo_fii.png";
+
   const handleLoginClick = () => {
     window.open('https://sed-sistema.vercel.app', '_blank');
   };
@@ -48,9 +51,9 @@ function App() {
             <a href="#" className="logo">
               <div className="logos-container">
                 {/* Logo UNMSM */}
-                <img src="logo_unsmm.png" alt="Logo UNMSM" className="logo-image" />
+                <img src={logoUnsmm} alt="Logo UNMSM" className="logo-image" />
                 {/* Logo FII */}
-                <img src="logo_fii.png" alt="Logo FII" className="logo-fii" />
+                <img src={logoFii} alt="Logo FII" className="logo-fii" />
               </div>
               <div className="logo-text">
                 <span className="logo-main">EPITC-FII</span>
@@ -208,7 +211,7 @@ function App() {
               <h3>SISTEMA DE EVALUACIÓN DUAL</h3>
               <p>Plataforma web para la evaluación dual de analistas y operarios mediante estudio de tiempos y suplementos.</p>
               <div className="university-badge">
-                <img src="logo_unsmm.png" alt="Logo UNMSM" className="university-logo" />
+                <img src={logoUnsmm} alt="Logo UNMSM" className="university-logo" />
                 <span>Facultad de Ingeniería Industrial - UNMSM</span>
               </div>
             </div>
