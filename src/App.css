@@ -65,16 +65,19 @@ header {
   border-radius: 5px;
 }
 
+.logo-image {
+  height: 50px;
+  width: auto;
+}
+
 .logo-fii {
   height: 45px;
   width: auto;
-  border-radius: 5px;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+.university-badge svg {
+  height: 30px;
+  width: auto;
 }
 
 .logo-main {

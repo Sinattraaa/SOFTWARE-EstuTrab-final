@@ -1,33 +1,29 @@
 import React from 'react';
 import './App.css';
 
+// SVG del logo UNMSM
+const LogoUnsmm = () => (
+  <svg className="logo-image" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="50" height="50" rx="5" fill="#1a5276"/>
+    <path d="M25 15L35 25L25 35L15 25L25 15Z" fill="white"/>
+    <circle cx="25" cy="25" r="4" fill="#1a5276"/>
+    <text x="25" y="45" textAnchor="middle" fill="white" fontSize="8" fontFamily="Arial">UNMSM</text>
+  </svg>
+);
+
+// SVG del logo FII
+const LogoFii = () => (
+  <svg className="logo-fii" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="45" height="45" rx="4" fill="white"/>
+    <rect x="10" y="10" width="25" height="5" fill="#1a5276"/>
+    <rect x="10" y="20" width="25" height="5" fill="#1a5276"/>
+    <rect x="10" y="30" width="25" height="5" fill="#1a5276"/>
+    <text x="22" y="40" textAnchor="middle" fill="#1a5276" fontSize="8" fontFamily="Arial">FII</text>
+  </svg>
+);
+
 function App() {
-  // PRUEBA CON DIFERENTES FORMATOS - usa solo una de estas opciones:
-  
-  // Opción 1: Si son PNG
-  const logoUnsmm = process.env.PUBLIC_URL + "/logo_unsmm.png";
-  const logoFii = process.env.PUBLIC_URL + "/logo_fii.png";
-  
-  // Opción 2: Si son JPG
-  // const logoUnsmm = process.env.PUBLIC_URL + "/logo_unsmm.jpg";
-  // const logoFii = process.env.PUBLIC_URL + "/logo_fii.jpg";
-  
-  // Opción 3: Si son SVG
-  // const logoUnsmm = process.env.PUBLIC_URL + "/logo_unsmm.svg";
-  // const logoFii = process.env.PUBLIC_URL + "/logo_fii.svg";
-
-  // Opción 4: URLs absolutas para debugging
-  // const logoUnsmm = "/logo_unsmm.png";
-  // const logoFii = "/logo_fii.png";
-
-  // Opción 5: Placeholders temporales para probar
-  // const logoUnsmm = "https://placehold.co/50x50/1a5276/white?text=UNMSM";
-  // const logoFii = "https://placehold.co/45x45/white/1a5276?text=FII";
-
-  // Para debugging - agrega esto temporalmente
-  console.log('Logo UNMSM path:', logoUnsmm);
-  console.log('Logo FII path:', logoFii);
-
+  // Función para manejar el clic en los botones
   const handleLoginClick = () => {
     window.open('https://sed-sistema.vercel.app', '_blank');
   };
@@ -40,13 +36,14 @@ function App() {
     }
   };
 
+  // Smooth scrolling para enlaces de navegación
   React.useEffect(() => {
     const handleSmoothScroll = (e) => {
       e.preventDefault();
       const targetId = e.target.getAttribute('href').substring(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
-        targetElement.scrollIntoView({
+        targetElement.scIntoView({
           behavior: 'smooth'
         });
       }
@@ -71,25 +68,10 @@ function App() {
           <nav className="navbar">
             <a href="#" className="logo">
               <div className="logos-container">
-                {/* Agrega onError para manejar imágenes que no cargan */}
-                <img 
-                  src={logoUnsmm} 
-                  alt="Logo UNMSM" 
-                  className="logo-image"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://placehold.co/50x50/1a5276/white?text=UNMSM";
-                  }}
-                />
-                <img 
-                  src={logoFii} 
-                  alt="Logo FII" 
-                  className="logo-fii"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://placehold.co/45x45/white/1a5276?text=FII";
-                  }}
-                />
+                {/* Logo UNMSM como SVG */}
+                <LogoUnsmm />
+                {/* Logo FII como SVG */}
+                <LogoFii />
               </div>
               <div className="logo-text">
                 <span className="logo-main">EPITC-FII</span>
@@ -108,8 +90,138 @@ function App() {
         </div>
       </header>
 
-      {/* ... resto del código igual ... */}
-      
+      <section className="hero">
+        <div className="container">
+          <h1>Sistema de Evaluación Dual para Analistas y Operarios</h1>
+          <p>Desarrollo e Implementación de un Sistema Automatizado en Visual Studio con Despliegue Web en Vercel para la Evaluación Dual mediante Estudio de Tiempos y Suplementos</p>
+          <button className="cta-btn" onClick={() => handleCtaClick(0)}>CONOCER MÁS DEL PROYECTO</button>
+          <button className="cta-btn secondary-btn" onClick={() => handleCtaClick(1)}>ACCEDER A LA PLATAFORMA</button>
+        </div>
+      </section>
+
+      <div className="container">
+        <h2 className="section-title" id="sistema">ACCESO AL SISTEMA</h2>
+        <div className="cards-container">
+          {/* Primer Card */}
+          <a href="https://software-estu-trab-jboh.vercel.app/" className="card-button" target="_blank" rel="noopener noreferrer">
+            <div className="card-icon">
+              <i className="fas fa-clipboard-check"></i>
+            </div>
+            <div className="card-title">Módulo de Analistas</div>
+            <div className="card-description">
+              Acceso al sistema de evaluación para analistas de tiempos y movimientos. Registre y analice datos de estudios de tiempos con herramientas especializadas.
+            </div>
+            <button className="card-btn">INGRESAR COMO ANALISTA</button>
+          </a>
+
+          {/* Segundo Card */}
+          <a href="https://analizador-de-tiempos-y-productivid.vercel.app/" className="card-button" target="_blank" rel="noopener noreferrer">
+            <div className="card-icon">
+              <i className="fas fa-user-check"></i>
+            </div>
+            <div className="card-title">Módulo de Operarios</div>
+            <div className="card-description">
+              Plataforma para la evaluación de operarios y registro de actividades. Sistema intuitivo para captura de datos de desempeño y productividad.
+            </div>
+            <button className="card-btn">INGRESAR COMO OPERARIO</button>
+          </a>
+        </div>
+      </div>
+
+      <section className="features" id="proyecto">
+        <div className="container">
+          <h2 className="section-title">CARACTERÍSTICAS DEL SISTEMA</h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-stopwatch"></i>
+              </div>
+              <h3 className="feature-title">Estudio de Tiempos</h3>
+              <p>Registro y análisis preciso de tiempos de operación con herramientas especializadas para medición de actividades.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-chart-line"></i>
+              </div>
+              <h3 className="feature-title">Análisis Estadístico</h3>
+              <p>Procesamiento de datos con métodos estadísticos para determinar tiempos estándar y suplementos.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-balance-scale"></i>
+              </div>
+              <h3 className="feature-title">Evaluación Dual</h3>
+              <p>Sistema de evaluación integral que considera tanto la perspectiva del analista como la del operario.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <i className="fas fa-cloud-upload-alt"></i>
+              </div>
+              <h3 className="feature-title">Despliegue en Vercel</h3>
+              <p>Plataforma web accesible desde cualquier dispositivo con conexión a internet, desplegada en Vercel.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="research-info" id="metodologia">
+        <div className="container">
+          <h2 className="section-title">INFORMACIÓN DE LA INVESTIGACIÓN</h2>
+          <div className="info-grid">
+            <div className="info-card">
+              <h3 className="info-title"><i className="fas fa-university"></i> Institución</h3>
+              <p>Facultad de Ingeniería Industrial - UNMSM<br />
+                Escuela Profesional de Ingeniería Textil y de Confecciones
+              </p>
+            </div>
+            <div className="info-card">
+              <h3 className="info-title"><i className="fas fa-graduation-cap"></i> Curso</h3>
+              <p>Estudio del trabajo - Dr. Julios Salas Bacalla</p>
+            </div>
+            <div className="info-card">
+              <h3 className="info-title"><i className="fas fa-calendar-alt"></i> Duración</h3>
+              <p>Proyecto de investigación desarrollado durante el semestre 2025-II</p>
+            </div>
+            <div className="info-card">
+              <h3 className="info-title"><i className="fas fa-tools"></i> Tecnologías</h3>
+              <p>Visual Studio, .NET, C#, HTML5, CSS3, JavaScript, Vercel</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="team" id="equipo">
+        <div className="container">
+          <h2 className="section-title">INTEGRANTES</h2>
+          <div className="team-grid">
+            <div className="team-member">
+              <div className="member-icon">
+                <i className="fas fa-user"></i>
+              </div>
+              <h3 className="member-name">Adriano Fabrisio Castillo Huayanay</h3>
+              <p className="member-role">23170083</p>
+              <p>Programador y desarrollador del software</p>
+            </div>
+            <div className="team-member">
+              <div className="member-icon">
+                <i className="fas fa-user"></i>
+              </div>
+              <h3 className="member-name">Valery Anghely Menacho Pérez</h3>
+              <p className="member-role">23170091</p>
+              <p>Lider de equipo - Investigadora</p>
+            </div>
+            <div className="team-member">
+              <div className="member-icon">
+                <i className="fas fa-user"></i>
+              </div>
+              <h3 className="member-name">Jesus Alberto Condezo Cordova</h3>
+              <p className="member-role">23170245</p>
+              <p>Programador y desarrollador del software</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer id="contacto">
         <div className="container">
           <div className="footer-content">
@@ -117,19 +229,40 @@ function App() {
               <h3>SISTEMA DE EVALUACIÓN DUAL</h3>
               <p>Plataforma web para la evaluación dual de analistas y operarios mediante estudio de tiempos y suplementos.</p>
               <div className="university-badge">
-                <img 
-                  src={logoUnsmm} 
-                  alt="Logo UNMSM" 
-                  className="university-logo"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://placehold.co/30x30/1a5276/white?text=UNMSM";
-                  }}
-                />
+                {/* Logo en footer como SVG */}
+                <LogoUnsmm />
                 <span>Facultad de Ingeniería Industrial - UNMSM</span>
               </div>
             </div>
-            {/* ... resto del footer ... */}
+            <div className="footer-column">
+              <h3>ENLACES RÁPIDOS</h3>
+              <ul className="footer-links">
+                <li><a href="#proyecto">El Proyecto</a></li>
+                <li><a href="#sistema">El Sistema</a></li>
+                <li><a href="#metodologia">Metodología</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h3>ACCESO AL SISTEMA</h3>
+              <ul className="footer-links">
+                <li><a href="https://software-estu-trab-jboh.vercel.app/" target="_blank" rel="noopener noreferrer">Módulo de Analistas</a></li>
+                <li><a href="https://analizador-de-tiempos-y-productivid.vercel.app/" target="_blank" rel="noopener noreferrer">Módulo de Operarios</a></li>
+                <li><a href="#">Documentación</a></li>
+                <li><a href="#">Manual de Usuario</a></li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h3>CONTACTO</h3>
+              <ul className="footer-links">
+                <li><i className="fas fa-envelope"></i> fii@unmsm.edu.pe</li>
+                <li><i className="fas fa-phone"></i> +51 987 654 321</li>
+                <li><i className="fas fa-map-marker-alt"></i> Facultad de Ingeniería Industrial - UNMSM</li>
+              </ul>
+            </div>
+          </div>
+          <div className="copyright">
+            <p>&copy; 2025 Sistema de Evaluación Dual - FII UNMSM. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
