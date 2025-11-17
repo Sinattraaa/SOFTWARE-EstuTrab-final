@@ -1,4 +1,6 @@
 import React from 'react';
+import logoUnsmm from './assets/logo_unsmm.png';
+import logoFii from './assets/logo_fii.png';
 import './App.css';
 
 function App() {
