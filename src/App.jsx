@@ -1,13 +1,12 @@
 import React from 'react';
-import logoUnsmm from './assets/logo_unsmm.png';
-import logoFii from './assets/logo_fii.png';
 import './App.css';
 
 function App() {
-  // Rutas absolutas desde la carpeta public
+  // RUTAS CORRECTAS PARA LOS LOGOS - AGREGAR ESTAS 2 LÍNEAS:
   const logoUnsmm = process.env.PUBLIC_URL + "/logo_unsmm.png";
   const logoFii = process.env.PUBLIC_URL + "/logo_fii.png";
 
+  // Función para manejar el clic en los botones
   const handleLoginClick = () => {
     window.open('https://sed-sistema.vercel.app', '_blank');
   };
@@ -52,9 +51,9 @@ function App() {
           <nav className="navbar">
             <a href="#" className="logo">
               <div className="logos-container">
-                {/* Logo UNMSM */}
+                {/* Logo UNMSM - CAMBIAR ESTA LÍNEA: */}
                 <img src={logoUnsmm} alt="Logo UNMSM" className="logo-image" />
-                {/* Logo FII */}
+                {/* Logo FII - CAMBIAR ESTA LÍNEA: */}
                 <img src={logoFii} alt="Logo FII" className="logo-fii" />
               </div>
               <div className="logo-text">
@@ -213,6 +212,7 @@ function App() {
               <h3>SISTEMA DE EVALUACIÓN DUAL</h3>
               <p>Plataforma web para la evaluación dual de analistas y operarios mediante estudio de tiempos y suplementos.</p>
               <div className="university-badge">
+                {/* Logo en footer - CAMBIAR ESTA LÍNEA: */}
                 <img src={logoUnsmm} alt="Logo UNMSM" className="university-logo" />
                 <span>Facultad de Ingeniería Industrial - UNMSM</span>
               </div>
