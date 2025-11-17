@@ -59,24 +59,8 @@ header {
   gap: 10px;
 }
 
-.logo-image {
-  height: 50px;
-  width: auto;
-  border-radius: 5px;
-}
-
-.logo-image {
-  height: 50px;
-  width: auto;
-}
-
 .logo-fii {
   height: 45px;
-  width: auto;
-}
-
-.university-badge svg {
-  height: 30px;
   width: auto;
 }
 
