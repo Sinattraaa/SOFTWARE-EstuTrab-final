@@ -43,7 +43,7 @@ function App() {
       const targetId = e.target.getAttribute('href').substring(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
-        targetElement.scIntoView({
+        targetElement.scrollIntoView({
           behavior: 'smooth'
         });
       }
@@ -95,7 +95,6 @@ function App() {
           <h1>Sistema de Evaluación Dual para Analistas y Operarios</h1>
           <p>Desarrollo e Implementación de un Sistema Automatizado en Visual Studio con Despliegue Web en Vercel para la Evaluación Dual mediante Estudio de Tiempos y Suplementos</p>
           <button className="cta-btn" onClick={() => handleCtaClick(0)}>CONOCER MÁS DEL PROYECTO</button>
-          <button className="cta-btn secondary-btn" onClick={() => handleCtaClick(1)}>ACCEDER A LA PLATAFORMA</button>
         </div>
       </section>
 
@@ -194,6 +193,7 @@ function App() {
         <div className="container">
           <h2 className="section-title">INTEGRANTES</h2>
           <div className="team-grid">
+            {/* Integrante 1 */}
             <div className="team-member">
               <div className="member-icon">
                 <i className="fas fa-user"></i>
@@ -202,6 +202,8 @@ function App() {
               <p className="member-role">23170083</p>
               <p>Programador y desarrollador del software</p>
             </div>
+
+            {/* Integrante 2 */}
             <div className="team-member">
               <div className="member-icon">
                 <i className="fas fa-user"></i>
@@ -210,6 +212,8 @@ function App() {
               <p className="member-role">23170091</p>
               <p>Lider de equipo - Investigadora</p>
             </div>
+
+            {/* Integrante 3 */}
             <div className="team-member">
               <div className="member-icon">
                 <i className="fas fa-user"></i>
@@ -217,6 +221,46 @@ function App() {
               <h3 className="member-name">Jesus Alberto Condezo Cordova</h3>
               <p className="member-role">23170245</p>
               <p>Programador y desarrollador del software</p>
+            </div>
+
+            {/* Integrante 4 - NUEVO */}
+            <div className="team-member">
+              <div className="member-icon">
+                <i className="fas fa-user"></i>
+              </div>
+              <h3 className="member-name">Jorge Andre Giraldo Baldeon</h3>
+              <p className="member-role">22170085</p>
+              <p>Integrante - Investigador</p>
+            </div>
+
+            {/* Integrante 5 - NUEVO */}
+            <div className="team-member">
+              <div className="member-icon">
+                <i className="fas fa-user"></i>
+              </div>
+              <h3 className="member-name">Miluska Dinoshka Cotrina Villar</h3>
+              <p className="member-role">2370247</p>
+              <p>Integrante - Investigador</p>
+            </div>
+
+            {/* Integrante 6 - NUEVO */}
+            <div className="team-member">
+              <div className="member-icon">
+                <i className="fas fa-user"></i>
+              </div>
+              <h3 className="member-name">Juan Carlos Crespin Pineda</h3>
+              <p className="member-role">23170248</p>
+              <p>Integrante - Investigador</p>
+            </div>
+
+            {/* Integrante 7 - NUEVO */}
+            <div className="team-member">
+              <div className="member-icon">
+                <i className="fas fa-user"></i>
+              </div>
+              <h3 className="member-name">Aracely Delia Nayrobi Cuba Vásquez</h3>
+              <p className="member-role">23170249</p>
+              <p>Integrante - Investigado</p>
             </div>
           </div>
         </div>
